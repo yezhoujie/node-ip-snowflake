@@ -6,7 +6,7 @@ var snowflake = require('../lib/snowflake');
 // var snowflake = require('../').Snowflake;
 // console.log(snowflake.nextId());
 function withCustomConfig(){
-    let config = {
+    var config = {
         timeBits: 32,
         workerBits: 16,
         seqBits: 15,
