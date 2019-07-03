@@ -49,12 +49,24 @@ node examples/example.js
 
 --------------------------
 ```
+npm i node-ip-snowflake
+```
+```
+// in package.json
+.....
+  "dependencies": {
+    ......
+    "node-ip-snowflake": "^1.0.1"
+  }
+.....
+```
+```
 //only run snowflake nextId with default setting, and get ID in HEX 10.
-var snowflake = require('node-snowflake').Snowflake;
+var snowflake = require('node-ip-snowflake').Snowflake;
 var id = snowflake.nextId(); // use default setting
 console.log(id);
 //only run snowflake nextId with default setting, and get ID in HEX 36. 
-var snowflake = require('node-snowflake').Snowflake;
+var snowflake = require('node-ip-snowflake').Snowflake;
 var id = snowflake.nextId(36); // use default setting
 console.log(id);
 ```
@@ -62,7 +74,7 @@ console.log(id);
 ---------------------------
 ```
 //using custom settting.<br>
-var snowflake = require('node-snowflake').Snowflake;<br>
+var snowflake = require('node-ip-snowflake').Snowflake;<br>
  let config = {
        timeBits: 32,
        workerBits: 16,

@@ -1,4 +1,23 @@
 language: node_js
-script:
+install:
   - npm install
-  - node examples/example.js
+stages:
+  - test
+  - deploy
+jobs:
+  include:
+    - stage: test
+      script:
+        - npm install
+        - node examples/example.js
+    - stage: deploy
+      deploy:
+        provider: npm
+        email: yezhoujie1988@163.com
+        api_key:
+          secure: MRIxchbOYsZZDrpUq6gQshNDtemQsV3HT7OEYm/62Vb+O2ogfABQ2Pd4OL2AaU4MDWH6Zmsrrz/ekdT5NjB9KAxT45hsz9YWsLkYQIfBnaqQF7oMPcKaStzyzZECEZrCJnkjkB1BeCOZRA4Tgchc4VmXsUSof8Hp1fWkRIdxcS2AxT70SYMlHcKP5pM0DkhyZznm/5gLZO/u3ZVYscL7Eiz2+sRuIDoUWxqLYllxna9pXwLSLRdC4v8WvlTdRX0ahn+obY4TXgRPkZRCte1OxVWPZCEEDH22mUGWj0nQ8EYLKEGt+y3fo5M0IorVQMx5zpcdN5AULsiZrtT4sBNAGywWhI99w6OM2EOal8IyeMH4qDmRZXjCsnujja4NQfXTmNcHkrBOfYTE4Q15fHWMSjcFLBIcK9Gg/YQ01wZdz7ZGnpxiDCY/0DVV3nWh81Z2x4cK0nrVI/2cQvG1ti5NjxyYEhOEdY+0N1fIZUjXBLnYLoCozY+9Lmr8aFSEv0g3rtGgYBcfvbxYw7FG90jDl7RwbNbMJJjvEvXnn0kq3U8Dt2KhSGsrfz3EBOKQ8cVetUzn02TDYwlWX6T7k9QpNsWgN/TJXnTwCda8DrRnI7H2yve2EQJC+GOiSYak+U8+iDtoJlte/f7723iGAUFLH2TyaB99rCzmkRv38LzJOPw=
+        on:
+          tags: true
+
+    
+

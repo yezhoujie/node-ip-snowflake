@@ -32,3 +32,4 @@ tmp/
 .npmrc
 .vscode
 package-lock.json
+*.tgz
