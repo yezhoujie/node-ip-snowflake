@@ -1,4 +1,4 @@
 language: node_js
 script:
   - npm install
-  - node /examples/example.js
+  - node examples/example.js
