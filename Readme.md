@@ -38,7 +38,7 @@ It referenced the baidu's implementaton of [https://github.com/baidu/uid-generat
 you can change the last three bits(delta seconds,  worker id, sequence) by yourself depending your network settings, (total bits must equals to 64).
 
 
-###how to use
+### how to use
 ```
 // only run example
 npm install
@@ -92,4 +92,4 @@ console.log(id);
 - you can just call nextId() and get the result in HEX 10
 - you should not treat the result in HEX 2, 10 as a Number, because in js it has a digital progress problem.
 
-###see examples/example.js
+### see examples/example.js

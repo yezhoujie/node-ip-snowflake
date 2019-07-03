@@ -1,11 +1,11 @@
 {
   "name": "node-ip-snowflake",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "generate unique ID(code) with a little modification of twitter snowflake, and get workID by IP of program(or container),  implemented with nodejs ",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/kurten/node-snowflake.git"
+    "url": "https://github.com/yezhoujie/node-ip-snowflake.git"
   },
   "keywords": [
     "node.js",
@@ -18,7 +18,7 @@
   "author": "Carter Ye",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kurten/node-snowflake/issues"
+    "url": "https://github.com/yezhoujie/node-ip-snowflake/issues"
   },
   "dependencies": {
     "moment": "^2.24.0"
