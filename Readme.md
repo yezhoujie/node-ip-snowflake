@@ -40,7 +40,7 @@ you can change the last three bits(delta seconds,  worker id, sequence) by yours
 
 ###how to use
 ```
-// only run example<br>
+// only run example
 npm install
 node examples/example.js
 ```
@@ -76,13 +76,16 @@ console.log(id);
 ----------------------------
 
 ### configurations
-- workerBits: it is the CIDR in your cluster if your CIDR is /24, then it should be 24, other than one of your instance can be assgin to the same worker id. default:16
-- timeBits: represents delta seconds since a customer epoch(see beginTime config below). you can increase or decrease by yourself according workerBits setting. default:32
-- seqBits: represents sequence within the one second, you can increase or decrease by yourself according workerBits setting. default:15
-(important: whatever how you change the three configuration abouve, the sum of  workerBits+timeBits+seqBits should be 63)
-- ip: the program will get your IP by getting eth0, if you don't have a network adapter named eth0, you should get the IP address by yourself, and call the init fucntion using this ip, otherwise, the default IP will be: 192.168.0.1
-- beginTime: the begin date the ID will generated, and maximun time for this program available will calculated by this configuartion, for example, if the beginTime is '2019-01-01' and the program will no longer generate new ID 128 years later since '2019-01-01'. default: '2019-01-01'
-attention: beginTime should not be changed after it has been setted, and started to generate ID in your production env. otherwise you might get the same ID.
+- **workerBits**: it is the CIDR in your cluster if your CIDR is /24, then it should be 24, other than one of your instance can be assgin to the same worker id. **default:16**
+- **timeBits**: represents delta seconds since a customer epoch(see beginTime config below). you can increase or decrease by yourself according workerBits setting. **default:32**
+- **seqBits**: represents sequence within the one second, you can increase or decrease by yourself according workerBits setting. **default:15**
+
+**(important: whatever how you change the three configuration abouve, the sum of  workerBits+timeBits+seqBits should be 63)**
+
+- **ip**: the program will get your IP by getting eth0, if you don't have a network adapter named eth0, you should get the IP address by yourself, and call the init fucntion using this ip, otherwise, **the default IP will be: 192.168.0.1**
+- **beginTime**: the begin date the ID will generated, and maximun time for this program available will calculated by this configuartion, for example, if the beginTime is '2019-01-01' and the program will no longer generate new ID 128 years later since '2019-01-01'. **default: '2019-01-01'**
+
+**attention: beginTime should not be changed after it has been setted, and started to generate ID in your production env. otherwise you might get the same ID.**
 
 ### fucntion nextId(HEX)
 - the fucntion nextId(HEX) has a parameter HEX, it can be set to convert your result ID in a particular HEX. it have been tested in HEX 2, 10, 16, 32, 36
