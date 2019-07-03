@@ -1,6 +1,8 @@
 node-ip-snowflake
 
 [![Build Status](https://travis-ci.com/yezhoujie/node-ip-snowflake.svg?branch=master)](https://travis-ci.com/yezhoujie/node-ip-snowflake)
+
+[中文文档](Readme-CN.md)
 ==============
 
 node-ip-snowflake is a node.js clone and some updateing for [snowflake-uid](https://github.com/johnhuang-cn/snowflake-uid).
@@ -30,10 +32,10 @@ It referenced the baidu's implementaton of [https://github.com/baidu/uid-generat
 
 * worker id \(16 bits\)  
   The next 16 bits, represents the worker node id, maximum value will be 65536
-. Why set 16 bits instead of the 22 bits of baidu's implementation is because usually we set the CIDR of k8s env is /16. 16 bits can guarantee that each instance has an unique worker id. If you can set the network CIDR to /24, you can increase the worker id bits, and extend the time bits and sequence bits.
+. Why set 16 bits instead of the 22 bits of baidu's implementation is because usually we set the CIDR of k8s env is /16. 16 bits can guarantee that each instance has an unique worker id. If you can set the network CIDR to /24, you can increase the worker id bits, and decrease the time bits and sequence bits.
 
 * sequence \(15 bits\)  
-  the last 15 bits, represents sequence within the one second, maximum is 32 768
+  the last 15 bits, represents sequence within the one second, maximum is 32768
  per second for one instance by default.
 
 
@@ -89,7 +91,7 @@ console.log(id);
 
 ----------------------------
 
-### configurations
+### initialization configurations( init(config) )
 - **workerBits**: it is the CIDR in your cluster if your CIDR is /24, then it should be 24, other than one of your instance can be assgin to the same worker id. **default:16**
 - **timeBits**: represents delta seconds since a customer epoch(see beginTime config below). you can increase or decrease by yourself according workerBits setting. **default:32**
 - **seqBits**: represents sequence within the one second, you can increase or decrease by yourself according workerBits setting. **default:15**
