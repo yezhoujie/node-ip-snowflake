@@ -1,4 +1,6 @@
 node-ip-snowflake
+
+[![Build Status](https://travis-ci.com/yezhoujie/node-ip-snowflake.svg?branch=master)](https://travis-ci.com/yezhoujie/node-ip-snowflake)
 ==============
 
 node-ip-snowflake is a node.js clone and some updateing for [snowflake-uid](https://github.com/johnhuang-cn/snowflake-uid).
